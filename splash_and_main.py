@@ -34,18 +34,6 @@ class App:
             image = image.convert_alpha()
         return image
 
-    def load_level(self, filename):
-        filename = "data/" + filename
-        # читаем уровень, убирая символы перевода строки
-        with open(filename, 'r') as mapFile:
-            level_map = [line.strip() for line in mapFile]
-
-        # и подсчитываем максимальную длину
-        max_width = max(map(len, level_map))
-
-        # дополняем каждую строку пустыми клетками ('.')
-        return list(map(lambda x: x.ljust(max_width, '.'), level_map))
-
     def start_screen(self):
         fon = pygame.transform.scale(self.load_image('splash.jpg'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
@@ -55,21 +43,50 @@ class App:
                     self.terminate()
                 elif event.type == pygame.KEYDOWN or \
                         event.type == pygame.MOUSEBUTTONDOWN:
-                    app.select_level()
+                    app.select_level1()
                     return  # начинаем игру
             pygame.display.flip()
             self.clock.tick(self.fps)
 
-    def select_level(self):
+    def select_level1(self):
         fon = pygame.transform.scale(self.load_image('select_level1.jpg'), (self.width, self.height))
+        self.screen.blit(fon, (0, 0))
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.terminate()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RIGHT:
+                        app.select_level2()
+            pygame.display.flip()
+
+    def select_level2(self):
+        fon = pygame.transform.scale(self.load_image('select_level2.jpg'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
 
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.terminate()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_LEFT:
+                        app.select_level1()
+                    if event.key == pygame.K_RIGHT:
+                        app.select_level3()
             pygame.display.flip()
-            self.clock.tick(self.fps)
+
+    def select_level3(self):
+        fon = pygame.transform.scale(self.load_image('select_level3.jpg'), (self.width, self.height))
+        self.screen.blit(fon, (0, 0))
+
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.terminate()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_LEFT:
+                        app.select_level2()
+            pygame.display.flip()
 
     def run_game(self):
         run = True
@@ -78,7 +95,6 @@ class App:
                 if event.type == pygame.QUIT:
                     self.terminate()
                 key = pygame.key.get_pressed()
-
 
             self.screen.fill(pygame.Color('black'))
             pygame.display.flip()
@@ -89,3 +105,4 @@ if __name__ == '__main__':
     app = App()
     app.start_screen()
     app.run_game()
+

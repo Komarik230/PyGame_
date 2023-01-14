@@ -1,8 +1,9 @@
 import pygame
 from blocks import Tile
-from map import tile_size, WIDTH, HEIGHT
+from map import tile_size, WIDTH
 from player import Player
 from particles import ParticleEffect
+from coin import Coin
 
 
 class Level:
@@ -40,6 +41,7 @@ class Level:
 
     def setup_level(self, layout):
         self.tiles = pygame.sprite.Group()
+        self.coins = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
 
         for row_index, row in enumerate(layout):
@@ -50,6 +52,9 @@ class Level:
                 if cell == 'X':
                     tile = Tile((x, y), tile_size)
                     self.tiles.add(tile)
+                if cell == 'C':
+                    coin = Coin((x, y), tile_size)
+                    self.coins.add(coin)
                 if cell == 'P':
                     player_sprite = Player((x, y), self.display_surface, self.create_jump_particles)
                     self.player.add(player_sprite)
@@ -114,6 +119,8 @@ class Level:
         self.dust_sprite.draw(self.display_surface)
         self.tiles.update(self.world_shift)
         self.tiles.draw(self.display_surface)
+        self.coins.update(self.world_shift)
+        self.coins.draw(self.display_surface)
         self.scroll_x()
         self.player.update()
         self.horizontal_movement_collision()

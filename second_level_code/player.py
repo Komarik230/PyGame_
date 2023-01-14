@@ -123,6 +123,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect[1] > 640:
             call(["python", "game_over.py"]) # нужно доработать вызов файла
 
+
     def jump(self):
         self.direction.y = self.jump_speed
 

@@ -3,7 +3,7 @@ from blocks import Tile
 from map import tile_size, WIDTH
 from player import Player
 from particles import ParticleEffect
-from coin import Coin
+from second_level_code.coin import Coin
 
 
 class Level:
@@ -14,7 +14,7 @@ class Level:
         self.current_x = 0
         self.dust_sprite = pygame.sprite.GroupSingle()
         self.player_on_ground = False
-        self.length = 0
+        self.coin = 0
 
     def create_jump_particles(self, pos):
         if self.player.sprite.facing_right:

@@ -74,6 +74,8 @@ class App:
                         app.select_level1()
                     if event.key == pygame.K_RIGHT:
                         app.select_level3()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    exec(open("start.py").read())
             pygame.display.flip()
 
     def select_level3(self):

@@ -1,6 +1,6 @@
 import pygame
 from blocks import Tile
-from map import tile_size, WIDTH
+from map import tile_size, WIDTH, HEIGHT
 from player import Player
 from particles import ParticleEffect
 
@@ -13,6 +13,7 @@ class Level:
         self.current_x = 0
         self.dust_sprite = pygame.sprite.GroupSingle()
         self.player_on_ground = False
+        self.length = 0
 
     def create_jump_particles(self, pos):
         if self.player.sprite.facing_right:

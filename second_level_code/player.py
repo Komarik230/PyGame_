@@ -1,6 +1,6 @@
-import pygame
+import pygame, os
 from support import import_folder
-
+from subprocess import call, Popen
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos, surface, create_jump_particles):
@@ -119,6 +119,10 @@ class Player(pygame.sprite.Sprite):
         self.direction.y += self.gravity
         self.rect.y += self.direction.y
 
+    def game_ov(self):
+        if self.rect[1] > 640:
+            call(["python", "game_over.py"]) # нужно доработать вызов файла
+
     def jump(self):
         self.direction.y = self.jump_speed
 
@@ -127,3 +131,4 @@ class Player(pygame.sprite.Sprite):
         self.get_status()
         self.animate()
         self.run_dust_animation()
+        self.game_ov()

@@ -1,4 +1,3 @@
-
 import random
 import sys
 import pygame
@@ -11,6 +10,8 @@ clock = pygame.time.Clock()
 particles = []
 text_surf = pygame.image.load("game over.png")
 text_rect = text_surf.get_rect(center=(width // 2, height // 2))
+
+
 def update():
     particle = {
         "pos": [
@@ -25,10 +26,12 @@ def update():
         p['pos'][0] += p['velocity'][0]
         p['pos'][1] += p['velocity'][1]
 
+
 def render():
     for p in particles:
         pygame.draw.circle(screen, (148, 16, 16), p['pos'], 10)
     screen.blit(text_surf, text_rect)
+
 
 while True:
     for event in pygame.event.get():

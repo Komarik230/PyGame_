@@ -1,14 +1,11 @@
 import pygame, sys
 from map import *
-from second_level import LevelSecond
-
+from level import Level
 
 pygame.init()
-WIDTH = 1024
-HEIGHT = 640
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
-level = LevelSecond(map,screen)
+level = Level(map2, screen)
 
 while True:
     for event in pygame.event.get():
@@ -16,7 +13,8 @@ while True:
             pygame.quit()
             sys.exit()
 
-    screen.fill('black')
+    background = pygame.image.load("level2.jpg")
+    screen.blit(background, (0, 0))
     level.run()
 
     pygame.display.update()

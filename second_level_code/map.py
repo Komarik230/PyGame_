@@ -7,7 +7,7 @@ map2 = [
 'XXXXX       XX                            XXXXX        XXXXXX                   XXXXX                C XX',
 'X XX    X  XXXX    XX  XX   XX  XXX                                              C              XXXXXXXXX',
 'X      CX  XXXX    XX  XXX       XXX   XXXXX  XXXX  XXXXXXXXX     XXX  XX     XXXXXX  XXX  X            X',
-'XP   XXXX  XXXXXX  XX  XXXX    XX                C             C                                C  XX   X',
+'XP   XXXX  XXXXXX  XX  XXXX    XX                C             C                                C  XX  EX',
 'XXXXXXXXXX XXXXXX  XX XXXXXXXXXXXXXXXXX XX  XXXXXXXXXX XXXX XXXXXXXXX XXXXX   XXXX XXX  XXXX  XXXXX X XXX']
 
 tile_size = 64

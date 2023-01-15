@@ -26,3 +26,15 @@ class Coin(pygame.sprite.Sprite):
 
     def update(self, x_shift):
         self.rect.x += x_shift
+
+
+class End(pygame.sprite.Sprite):
+    def __init__(self, pos, size):
+        super().__init__()
+        self.image = load_screen_im("coin.png")
+        self.rect = self.image.get_rect(topleft=pos)
+        self.mask = pygame.mask.from_surface(self.image)
+
+    def update(self, x_shift):
+        self.rect.x += x_shift
+

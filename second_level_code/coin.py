@@ -31,7 +31,7 @@ class Coin(pygame.sprite.Sprite):
 class End(pygame.sprite.Sprite):
     def __init__(self, pos, size):
         super().__init__()
-        self.image = load_screen_im("coin.png")
+        self.image = load_screen_im("mogila.png")
         self.rect = self.image.get_rect(topleft=pos)
         self.mask = pygame.mask.from_surface(self.image)
 

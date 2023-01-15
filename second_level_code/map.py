@@ -1,5 +1,5 @@
 map2 = [
-'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 'XC       C                              C                                 C                 C           X',
 'X XX    XXX            XX            XXXX        C                   XXXXXXXXXXXX          XXX          X',
 'X XX C                                        XXXXXXXX                                               C  X',

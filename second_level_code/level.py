@@ -3,7 +3,7 @@ from blocks import Tile
 from map import tile_size, WIDTH
 from player import Player
 from particles import ParticleEffect
-from second_level_code.coin import Coin
+from second_level_code.coin import Coin, End
 
 
 class Level:
@@ -42,6 +42,7 @@ class Level:
     def setup_level(self, layout):
         self.tiles = pygame.sprite.Group()
         self.coins = pygame.sprite.Group()
+        self.mogilas = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
 
         for row_index, row in enumerate(layout):
@@ -55,9 +56,13 @@ class Level:
                 if cell == 'C':
                     coin = Coin((x, y), tile_size)
                     self.coins.add(coin)
+                if cell == 'E':
+                    mogila = End((x, y), tile_size)
+                    self.mogilas.add(mogila)
                 if cell == 'P':
                     player_sprite = Player((x, y), self.display_surface, self.create_jump_particles)
                     self.player.add(player_sprite)
+
 
     def scroll_x(self):
         player = self.player.sprite
@@ -73,6 +78,7 @@ class Level:
         else:
             self.world_shift = 0
             player.speed = 8
+
 
     def horizontal_movement_collision(self):
         player = self.player.sprite
@@ -121,6 +127,8 @@ class Level:
         self.tiles.draw(self.display_surface)
         self.coins.update(self.world_shift)
         self.coins.draw(self.display_surface)
+        self.mogilas.update(self.world_shift)
+        self.mogilas.draw(self.display_surface)
         self.scroll_x()
         self.player.update()
         self.horizontal_movement_collision()

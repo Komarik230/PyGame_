@@ -1,12 +1,24 @@
-import pygame, sys
+import pygame, sys, os
 from map import *
 from level import Level
+
+
+def music_play(name):
+    fullname = os.path.join(name)
+    if not os.path.isfile(fullname):
+        print(f"Звуковой файл '{fullname}' не найден")
+        sys.exit()
+    pygame.mixer.music.load(fullname)
+    pygame.mixer.music.play(-1)
+
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 level = Level(map2, screen)
-
+pygame.display.set_caption('necropolis')
+pygame.display.set_icon(pygame.image.load('scull.png'))
+mus = music_play('horror.mp3')
 
 while True:
     for event in pygame.event.get():

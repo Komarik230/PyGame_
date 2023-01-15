@@ -4,7 +4,7 @@ map2 = [
 'X XX    XXX            XX            XXXX        C                   XXXXXXXXXXXX          XXX          X',
 'X XX C                                        XXXXXXXX                                               C  X',
 'X XXXX         XX         XX      XXXXX                   C        XXXXXX               XXXXXXXXXXXXXXXXX',
-'XXXXX       XX                            XXXXX        XXXXXX                   XXXXX                C XX',
+'XXXXX       XX                            XXXXX        XXXXXX                   XXXXX                C  X',
 'X XX    X  XXXX    XX  XX   XX  XXX                                              C              XXXXXXXXX',
 'X      CX  XXXX    XX  XXX       XXX   XXXXX  XXXX  XXXXXXXXX     XXX  XX     XXXXXX  XXX  X            X',
 'XP   XXXX  XXXXXX  XX  XXXX    XX                C             C                                C  XX  EX',

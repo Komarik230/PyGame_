@@ -18,6 +18,7 @@ def load_screen_im(name, colorkey=None):
 
 
 class Tile(pygame.sprite.Sprite):
+    # Класс плиток
     def __init__(self, pos, size):
         super().__init__()
         self.image = load_screen_im("box.png")

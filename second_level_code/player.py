@@ -1,6 +1,6 @@
-import pygame, os
+import pygame
 from support import import_folder
-from subprocess import call, Popen
+from subprocess import call
 
 
 class Player(pygame.sprite.Sprite):
@@ -12,20 +12,20 @@ class Player(pygame.sprite.Sprite):
         self.image = self.animations['idle'][self.frame_index]
         self.rect = self.image.get_rect(topleft=pos)
 
-        # dust particles
+        # работа с пылью, которая появляется при беге и прыжках
         self.import_dust_run_particles()
         self.dust_frame_index = 0
         self.dust_animation_speed = 0.15
         self.display_surface = surface
         self.create_jump_particles = create_jump_particles
 
-        # player movement
+        # движение игрока
         self.direction = pygame.math.Vector2(0, 0)
         self.speed = 8
         self.gravity = 0.8
         self.jump_speed = -16
 
-        # player status
+        # статус игрока
         self.status = 'idle'
         self.facing_right = True
         self.on_ground = False

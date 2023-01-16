@@ -29,6 +29,7 @@ class Coin(pygame.sprite.Sprite):
 
 
 class End(pygame.sprite.Sprite):
+    # При соприкосновении с объектом данного класса считается, что игрок прошел уровень
     def __init__(self, pos, size):
         super().__init__()
         self.image = load_screen_im("mogila.png")

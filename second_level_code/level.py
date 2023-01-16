@@ -1,5 +1,5 @@
-import os
-from subprocess import call, Popen
+import sqlite3
+from subprocess import call
 import pygame
 from blocks import Tile
 from map import tile_size, WIDTH
@@ -127,7 +127,7 @@ class Level:
                 self.count += 1
                 coin.kill()
 
-    def succesful_end(self):
+    def successful_end(self):
         player = self.player.sprite
         if pygame.sprite.spritecollideany(player, self.mogilas):
             con = sqlite3.connect('info.sqlite')
@@ -157,4 +157,4 @@ class Level:
         self.create_landing_dust()
         self.player.draw(self.display_surface)
         self.collide_with_money()
-        self.succesful_end()
+        self.successful_end()

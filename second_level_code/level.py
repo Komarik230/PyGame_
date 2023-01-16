@@ -1,3 +1,5 @@
+import os
+from subprocess import call, Popen
 import pygame
 from blocks import Tile
 from map import tile_size, WIDTH
@@ -14,7 +16,7 @@ class Level:
         self.current_x = 0
         self.dust_sprite = pygame.sprite.GroupSingle()
         self.player_on_ground = False
-        self.coin = 0
+        self.count = 0
 
     def create_jump_particles(self, pos):
         if self.player.sprite.facing_right:
@@ -63,7 +65,6 @@ class Level:
                     player_sprite = Player((x, y), self.display_surface, self.create_jump_particles)
                     self.player.add(player_sprite)
 
-
     def scroll_x(self):
         player = self.player.sprite
         player_x = player.rect.centerx
@@ -78,7 +79,6 @@ class Level:
         else:
             self.world_shift = 0
             player.speed = 8
-
 
     def horizontal_movement_collision(self):
         player = self.player.sprite
@@ -120,6 +120,18 @@ class Level:
         if player.on_ceiling and player.direction.y > 0.1:
             player.on_ceiling = False
 
+    def collide_with_money(self):
+        player = self.player.sprite
+        for coin in self.coins.sprites():
+            if pygame.sprite.collide_rect(player, coin):
+                self.count += 1
+                coin.kill()
+
+    def succesful_end(self):
+        player = self.player.sprite
+        if pygame.sprite.spritecollideany(player, self.mogilas):
+            call(["python", "successful_end.py"])
+
     def run(self):
         self.dust_sprite.update(self.world_shift)
         self.dust_sprite.draw(self.display_surface)
@@ -136,3 +148,5 @@ class Level:
         self.vertical_movement_collision()
         self.create_landing_dust()
         self.player.draw(self.display_surface)
+        self.collide_with_money()
+        self.succesful_end()

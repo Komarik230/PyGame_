@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="недоделанная версия2 уровня1 с музыкой">
-      <change beforePath="$PROJECT_DIR$/start_window.py" beforeDir="false" />
-    </list>
+    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="недоделанная версия2 уровня1 с музыкой" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,21 +46,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/varfo/PycharmProjects/Necropolis&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/varfo/PycharmProjects/gitt2",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\varfo\PycharmProjects\Necropolis" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.firstlevel_v1 (1)">
-    <configuration name="firstlevel_v1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Necropolis" />
+  <component name="RunManager" selected="Python.firstlevel_v1">
+    <configuration name="firstlevel_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyGame_" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -82,19 +81,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="firstlevel_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Necropolis" />
+    <configuration name="gitt2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyGame_" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\varfo\gitt2\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.10 (gitt2)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/firstlevel_v1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,13 +166,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.firstlevel_v1" />
+      <item itemvalue="Python.gitt2" />
+      <item itemvalue="Python.running2" />
+      <item itemvalue="Python.running2 (1)" />
+      <item itemvalue="Python.running2 (2)" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.firstlevel_v1 (1)" />
+        <item itemvalue="Python.firstlevel_v1" />
+        <item itemvalue="Python.gitt2" />
         <item itemvalue="Python.firstlevel_v1" />
         <item itemvalue="Python.running2" />
         <item itemvalue="Python.running2 (1)" />
-        <item itemvalue="Python.running2 (2)" />
       </list>
     </recent_temporary>
   </component>

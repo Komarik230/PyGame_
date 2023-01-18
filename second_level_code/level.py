@@ -65,6 +65,7 @@ class Level:
                     player_sprite = Player((x, y), self.display_surface, self.create_jump_particles)
                     self.player.add(player_sprite)
 
+
     def scroll_x(self):
         player = self.player.sprite
         player_x = player.rect.centerx
@@ -138,7 +139,6 @@ class Level:
             con.close()
 
             call(["python", "successful_end.py"])
-
 
     def run(self):
         self.dust_sprite.update(self.world_shift)

@@ -125,8 +125,9 @@ class Level:
         player = self.player.sprite
         for coin in self.coins.sprites():
             if pygame.sprite.collide_rect(player, coin):
-                self.count += 1
+                self.count += 1  # монетки собираются
                 coin.kill()
+                print(self.count)
 
     def successful_end(self):
         player = self.player.sprite

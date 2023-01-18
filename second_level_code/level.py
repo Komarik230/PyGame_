@@ -127,7 +127,8 @@ class Level:
             if pygame.sprite.collide_rect(player, coin):
                 self.count += 1  # монетки собираются
                 coin.kill()
-                print(self.count)
+                with open('info.txt', 'w', encoding='utf-8') as f:
+                    f.write(f'{self.count}')
 
     def successful_end(self):
         player = self.player.sprite

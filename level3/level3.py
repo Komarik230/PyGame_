@@ -1,22 +1,23 @@
 import pygame
 import random
-pygame.init()
 
-W = 1024
-H = 640
-screen = pygame.display.set_mode((W, H))
+
+pygame.init()
+Width = 1024
+Height = 640
+screen = pygame.display.set_mode((Width, Height))
 fps = 60
 clock = pygame.time.Clock()
 pygame.display.set_caption('necropolis')
 pygame.display.set_icon(pygame.image.load('scull.png'))
 font_path = 'font.ttf'
 font_large = pygame.font.Font(font_path, 48)
-font_small = pygame.font.Font(font_path, 24)
+font_small = pygame.font.Font(font_path, 26)
 
 game_over = False
 retry_text = font_small.render('press to restart', True, (255, 255, 255))
 retry_rect = retry_text.get_rect()
-retry_rect.midtop = (W // 2, H // 2)
+retry_rect.midtop = (Width // 2, Height // 2)
 
 ground_image = pygame.image.load('floor.png')
 ground_image = pygame.transform.scale(ground_image, (1024, 80))
@@ -48,7 +49,7 @@ class Sprites:
         self.gr_x = 0
         self.is_out = False  # упал за карту или нет
         self.is_dead = False
-        self.lenght = 4
+        self.lenght = 5
 
     def handle_input(self): # ручной ввод/ввод пользователя
         pass
@@ -65,15 +66,15 @@ class Sprites:
         self.rect.y += self.y_speed
 
         if self.is_dead:
-            if self.rect.top > H - GROUND_H:
+            if self.rect.top > Height - GROUND_H:
                 self.is_out = True
         else:
             self.handle_input()
 
-            if self.rect.bottom > H - GROUND_H:
+            if self.rect.bottom > Height - GROUND_H:
                 self.is_grounded = True
                 self.y_speed = 0
-                self.rect.bottom = H - GROUND_H
+                self.rect.bottom = Height - GROUND_H
 
     def draw(self, surface):
         surface.blit(self.image, self.rect)
@@ -89,13 +90,13 @@ class Player(Sprites):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_a]:
-            if self.rect.x <= W // 2:
+            if self.rect.x <= Width // 2:
                 self.gr_x += gr_speed
             if self.rect.x > 100:
                 self.x_speed = -self.speed
 
         elif keys[pygame.K_d]:
-            if self.rect.x >= W // 2:
+            if self.rect.x >= Width // 2:
                 self.gr_x -= gr_speed
 
             if self.rect.x < 800:
@@ -103,7 +104,6 @@ class Player(Sprites):
 
         if self.gr_x == -1024:
             self.gr_x = 0
-
 
         if (keys[pygame.K_SPACE] or keys[pygame.K_w]) and self.is_grounded:
             self.is_grounded = False
@@ -115,19 +115,14 @@ class Player(Sprites):
     def respawn(self):
         self.is_out = False
         self.is_dead = False
-        self.rect.midbottom = (W // 2, H - GROUND_H)
+        self.rect.midbottom = (Width // 2, Height - GROUND_H)
 
     def draw_main(self):
         screen.blit(bg_image, (0, 0))
         screen.blit(ground_image, (self.gr_x, 640 - GROUND_H))
         screen.blit(ground_image, (self.gr_x - 1024, 640 - GROUND_H))
-        # self.len_gr = self.gr_x
-        # width = 1024
-
         for i in range(1, self.lenght + 1):
-            screen.blit(ground_image, (self.gr_x + i * 1024, H - GROUND_H))
-        # screen.blit(ground_image, (self.gr_x + 2048, 640 - GROUND_H))
-        # screen.blit(grob_image, (1000, 330))
+            screen.blit(ground_image, (self.gr_x + i * 1024, Height - GROUND_H))
 
 
 class Tomb(Sprites):
@@ -142,26 +137,23 @@ class Tomb(Sprites):
             self.rect.bottomright = (0, 0)
         else:
             self.x_speed = -self.speed
-            self.rect.bottomleft = (W, 0)
+            self.rect.bottomleft = (Width, 0)
 
     def update(self):
         super().update()
-        if self.x_speed > 0 and self.rect.left > W or self.x_speed < 0 and self.rect.right < 0:
+        if self.x_speed > 0 and self.rect.left > Width or self.x_speed < 0 and self.rect.right < 0:
             self.is_out = True
-
 
 
 def main():
     player = Player()
     score = 0
     enemies = []
-    INIT_DELAY = 2000 # задержка спавна мобов
-    spawn_delay = INIT_DELAY # как часто спавнятся мобы(интервал)
-    INCREASE_BASE = 1.01
+    delay = 2000 # задержка спавна мобов
+    spawn_delay = delay # как часто спавнятся мобы(интервал)
+    increase = 1.01
     last_spawn_time = pygame.time.get_ticks()
-
     running = True
-
     while running:
         player.draw_main()
 
@@ -171,7 +163,7 @@ def main():
             elif e.type == pygame.KEYDOWN:
                 if player.is_out:
                     score = 0
-                    spawn_delay = INIT_DELAY
+                    spawn_delay = delay
                     last_spawn_time = pygame.time.get_ticks()
                     player.respawn()
                     enemies.clear()
@@ -179,11 +171,10 @@ def main():
         score_text = font_large.render(str(score), True, (255, 255, 255))
         score_rect = score_text.get_rect()
 
-        if player.is_out:
-            score_rect.midbottom = (W // 2, H // 2)
-
+        if player.is_out: # герой умер
+            score_rect.midbottom = (Width // 2, Height // 2)
             screen.blit(retry_text, retry_rect)
-        else: # player is still alive
+        else: # герой все еще жив
             player.update()
             player.draw(screen)
 
@@ -204,12 +195,11 @@ def main():
                         enemy.kill(enemy_dead_image)
                         player.jump()
                         score += 1
-                        spawn_delay = INIT_DELAY / (INCREASE_BASE ** score)
+                        spawn_delay = delay / (increase ** score)
 
                     else:
                         player.kill(player_image)
-
-            score_rect.midtop = (W // 2, 5)
+            score_rect.midtop = (Width // 2, 5)
         screen.blit(score_text, score_rect)
         pygame.display.flip()
 

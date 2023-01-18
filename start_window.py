@@ -50,7 +50,7 @@ class App:
             self.clock.tick(self.fps)
 
     def select_level1(self):
-        fon = pygame.transform.scale(self.load_image('select_level1.jpg'), (self.width, self.height))
+        fon = pygame.transform.scale(self.load_image('select_level1.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
         while True:
             for event in pygame.event.get():
@@ -62,7 +62,7 @@ class App:
             pygame.display.flip()
 
     def select_level2(self):
-        fon = pygame.transform.scale(self.load_image('select_level2.jpg'), (self.width, self.height))
+        fon = pygame.transform.scale(self.load_image('select_level2.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
 
         while True:
@@ -75,11 +75,11 @@ class App:
                     if event.key == pygame.K_RIGHT:
                         app.select_level3()
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    # call(["python", "running2.py"])
+                    call(["python", "running2.py"])
             pygame.display.flip()
 
     def select_level3(self):
-        fon = pygame.transform.scale(self.load_image('select_level3.jpg'), (self.width, self.height))
+        fon = pygame.transform.scale(self.load_image('select_level3.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
 
         while True:

@@ -4,42 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Изменен монстр">
+    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Добавлены все переключения">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/best_res.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_res.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game over.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/game over.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_over.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_over.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/coin.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/coin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/level1.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/level1_bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/level1_bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/level1_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1_support.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/level_completed.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/level_completed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/map1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/mogila.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/mogila.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/mus_level1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mus_level1.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/scull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/successful_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/successful_end.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/кирпичи.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/кирпичи.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/box.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/box.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/coin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/game over.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/game_over.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/horror.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/horror.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/level2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/level2.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/level2_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2_support.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/level_completed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/mogila.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/monstr.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/monstr.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/scull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/successful_end.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/necropolis.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/documents/necropolis.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ТЗ.docx" beforeDir="false" afterPath="$PROJECT_DIR$/documents/ТЗ.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,9 +67,9 @@
       <recent name="C:\Users\varfo\PycharmProjects\Necropolis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\data" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\documents" />
-      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level2" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level1" />
     </key>
@@ -373,7 +340,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674165076730</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Добавлены все переключения">
+      <created>1674168344376</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1674168344376</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Добавлены все переключения">
+      <created>1674168407705</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1674168407705</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -412,6 +393,7 @@
     <MESSAGE value="запуск об успешном прохождении" />
     <MESSAGE value="Добавлены монстры во втором уровне" />
     <MESSAGE value="Изменен монстр" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменен монстр" />
+    <MESSAGE value="Добавлены все переключения" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены все переключения" />
   </component>
 </project>

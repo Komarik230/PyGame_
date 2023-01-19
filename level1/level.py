@@ -5,7 +5,7 @@ from blocks import Tile
 from map import tile_size, WIDTH
 from player import Player
 from particles import ParticleEffect
-from second_level_code.coin import Coin, End
+from level2.coin import Coin, End
 
 
 class Level:

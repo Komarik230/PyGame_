@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Файлы отсортированы на втором и первом уровне">
+    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="запуск об успешном прохождении">
+      <change afterPath="$PROJECT_DIR$/level2/monstr.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/best_res.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_res.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level1/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/info.sqlite" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/level2/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level2/info.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/level2/level2_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/level2_support.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/level2/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/map.py" afterDir="false" />
@@ -294,7 +292,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674158032940</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="запуск об успешном прохождении">
+      <created>1674163486861</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1674163486861</updated>
+    </task>
+    <task id="LOCAL-00014" summary="запуск об успешном прохождении">
+      <created>1674163563775</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674163563775</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -330,6 +342,7 @@
     <MESSAGE value="Добавлено переключение на 3 уровень из главного файла" />
     <MESSAGE value="Файлы отсортированы" />
     <MESSAGE value="Файлы отсортированы на втором и первом уровне" />
-    <option name="LAST_COMMIT_MESSAGE" value="Файлы отсортированы на втором и первом уровне" />
+    <MESSAGE value="запуск об успешном прохождении" />
+    <option name="LAST_COMMIT_MESSAGE" value="запуск об успешном прохождении" />
   </component>
 </project>

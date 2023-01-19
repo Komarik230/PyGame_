@@ -8,8 +8,8 @@ Height = 640
 screen = pygame.display.set_mode((Width, Height))
 fps = 60
 clock = pygame.time.Clock()
-pygame.display.set_caption('necropolis')
-pygame.display.set_icon(pygame.image.load('scull.png'))
+pygame.display.set_caption('data/necropolis')
+pygame.display.set_icon(pygame.image.load('data/scull.png'))
 font_path = 'font.ttf'
 font_large = pygame.font.Font(font_path, 48)
 font_small = pygame.font.Font(font_path, 26)
@@ -19,22 +19,24 @@ retry_text = font_small.render('press to restart', True, (255, 255, 255))
 retry_rect = retry_text.get_rect()
 retry_rect.midtop = (Width // 2, Height // 2)
 
-ground_image = pygame.image.load('floor.png')
+ground_image = pygame.image.load('data/floor.png')
 ground_image = pygame.transform.scale(ground_image, (1024, 80))
 GROUND_H = ground_image.get_height()
 
-player_image = pygame.image.load('skeleton.png.')
+player_image = pygame.image.load('data/skeleton.png.')
 player_image = pygame.transform.scale(player_image, (100, 200))
 
-bg_image = pygame.image.load('level3_bg.jpg')
+bg_image = pygame.image.load('data/level3_bg.jpg')
 gr_speed = 3
 
-enemy_image = pygame.image.load('tomb.png')
+enemy_image = pygame.image.load('data/tomb.png')
 enemy_image = pygame.transform.scale(enemy_image, (100, 100))
 
-enemy_dead_image = pygame.image.load('dead_tomb.png')
+enemy_dead_image = pygame.image.load('data/dead_tomb.png')
 enemy_dead_image = pygame.transform.scale(enemy_dead_image, (100, 100))
 
+pygame.mixer.music.load('data/mus_level3.mp3')
+pygame.mixer.music.play(-1)
 
 class Sprites:
     def __init__(self, image):
@@ -160,6 +162,7 @@ def main():
         for e in pygame.event.get():
             if e.type == pygame.QUIT:
                 running = False
+                pygame.mixer.music.stop()
             elif e.type == pygame.KEYDOWN:
                 if player.is_out:
                     score = 0

@@ -8,7 +8,7 @@ Height = 640
 screen = pygame.display.set_mode((Width, Height))
 fps = 60
 clock = pygame.time.Clock()
-pygame.display.set_caption('data/necropolis')
+pygame.display.set_caption('necropolis')
 pygame.display.set_icon(pygame.image.load('data/scull.png'))
 font_path = 'font.ttf'
 font_large = pygame.font.Font(font_path, 48)

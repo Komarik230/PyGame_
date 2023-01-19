@@ -35,6 +35,16 @@ class App:
             image = image.convert_alpha()
         return image
 
+    def Coins(self):
+        font_path = 'font.ttf'
+        font_small = pygame.font.Font(font_path, 26)
+        with open('info.txt', 'rb') as f:
+            coins = int(f.read())
+        coins_text = font_small.render(str(coins), True, (255, 255, 255))
+        coins_rect = coins_text.get_rect()
+        coins_rect.midtop = (970, 15)
+        self.screen.blit(coins_text, coins_rect)
+
     def start_screen(self):
         fon = pygame.transform.scale(self.load_image('splash.jpg'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
@@ -52,6 +62,7 @@ class App:
     def select_level1(self):
         fon = pygame.transform.scale(self.load_image('select_level1.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
+        app.Coins()
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -66,6 +77,7 @@ class App:
     def select_level2(self):
         fon = pygame.transform.scale(self.load_image('select_level2.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
+        app.Coins()
 
         while True:
             for event in pygame.event.get():
@@ -83,6 +95,7 @@ class App:
     def select_level3(self):
         fon = pygame.transform.scale(self.load_image('select_level3.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
+        app.Coins()
 
         while True:
             for event in pygame.event.get():

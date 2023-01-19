@@ -181,6 +181,7 @@ class Level:
         player = self.player.sprite
         if pygame.sprite.spritecollideany(player, self.mogilas):
             call(["python", "successful_end.py"])
+            sys.exit()
 
     def run(self):
         self.dust_sprite.update(self.world_shift)
@@ -342,7 +343,8 @@ class Player(pygame.sprite.Sprite):
 
     def game_ov(self):
         if self.rect[1] > 640:
-            call(["python", "game_over.py"])  # нужно доработать вызов файла
+            call(["python", "game_over.py"])
+            sys.exit()
 
     def jump(self):
         self.direction.y = self.jump_speed

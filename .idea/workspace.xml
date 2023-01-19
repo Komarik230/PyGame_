@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="запуск об успешном прохождении">
-      <change afterPath="$PROJECT_DIR$/level2/monstr.png" afterDir="false" />
+    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Добавлены монстры во втором уровне">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level2/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/level2_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/level2_support.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/monstr.png" beforeDir="false" afterPath="$PROJECT_DIR$/level2/monstr.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674163563775</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Добавлены монстры во втором уровне">
+      <created>1674164355240</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1674164355240</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,6 +347,7 @@
     <MESSAGE value="Файлы отсортированы" />
     <MESSAGE value="Файлы отсортированы на втором и первом уровне" />
     <MESSAGE value="запуск об успешном прохождении" />
-    <option name="LAST_COMMIT_MESSAGE" value="запуск об успешном прохождении" />
+    <MESSAGE value="Добавлены монстры во втором уровне" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены монстры во втором уровне" />
   </component>
 </project>

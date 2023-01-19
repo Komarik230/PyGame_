@@ -4,27 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="недоделанная версия2 уровня1 с музыкой">
-      <change beforePath="$PROJECT_DIR$/.idea/PyGame_.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyGame_.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Добавлено переключение на 3 уровень из главного файла">
+      <change afterPath="$PROJECT_DIR$/level2/level2_support.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/skeleton.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/skeleton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level1/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1/level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level2/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/dead_tomb.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/dead_tomb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/floor.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/floor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/font.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/font.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/level3.py" beforeDir="false" afterPath="$PROJECT_DIR$/level3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/level3_bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/level3_bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/mus_level3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mus_level3.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/scull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/skeleton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level3/tomb.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/tomb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/splash_and_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/blocks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/box.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/coin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/info.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/level1/level1_support.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/level.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/particles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/running1.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1/level1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/support.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/blocks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/coin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/level.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/particles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/running2.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/level2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/support.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/start_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_window.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +63,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JMoydP0Dkurij3oVBEB7c5KMZ6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/OvsyannikovaOV/PycharmProjects/PyGame_/data",
@@ -83,6 +86,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_" />
+      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level2" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\data" />
     </key>
   </component>
@@ -274,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673826832624</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавлено переключение на 3 уровень из главного файла">
+      <created>1674155924264</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674155924264</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,11 +312,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="измененный размер фонов(еще другое название и где могла улучшила качество)" />
     <MESSAGE value="добавила лого череп и соединила главное окно с заставкой" />
     <MESSAGE value="заставка game over(при смерти героя)" />
     <MESSAGE value="недоделанная версия 1 уровня1(с плоским миром и врагами-могилами)" />
     <MESSAGE value="недоделанная версия2 уровня1 с музыкой" />
-    <option name="LAST_COMMIT_MESSAGE" value="недоделанная версия2 уровня1 с музыкой" />
+    <MESSAGE value="Добавлено переключение на 3 уровень из главного файла" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено переключение на 3 уровень из главного файла" />
   </component>
 </project>

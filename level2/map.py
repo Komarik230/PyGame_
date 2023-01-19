@@ -2,7 +2,7 @@ map2 = [
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 'XC       C                              C                                 C                 C           X',
 'X XX    XXX            XX            XXXX        C                   XXXXXXXXXXXX          XXX          X',
-'X XX C                                        XXXXXXXX                                               C  X',
+'X XX C                              M         XXXXXXXX                                               C  X',
 'X XXXX         XX         XX      XXXXX                   C        XXXXXX               XXXXXXXXXXXXXXXXX',
 'XXXXX       XX                            XXXXX        XXXXXX                   XXXXX                C  X',
 'X XX    X  XXXX    XX  XX   XX  XXX                                              C              XXXXXXXXX',

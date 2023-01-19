@@ -180,13 +180,6 @@ class Level:
     def successful_end(self):
         player = self.player.sprite
         if pygame.sprite.spritecollideany(player, self.mogilas):
-            con = sqlite3.connect('info.sqlite')
-            cur = con.cursor()
-            data = ('coin', int(self.count))
-            cur.execute(data)
-            con.commit()
-            con.close()
-
             call(["python", "successful_end.py"])
 
     def run(self):

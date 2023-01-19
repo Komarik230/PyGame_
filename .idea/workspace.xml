@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Добавлено переключение на 3 уровень из главного файла">
-      <change afterPath="$PROJECT_DIR$/level2/level2_support.py" afterDir="false" />
+    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Файлы отсортированы на втором и первом уровне">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/blocks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/box.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/coin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/info.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/level1/level1_support.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/level.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/particles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/player.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/running1.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1/level1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level1/support.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/blocks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/coin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/level.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/particles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/player.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/running2.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/level2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/support.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/best_res.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_res.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level1/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/info.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/level2/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/level2_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/level2_support.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2/map.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +74,7 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level2" />
+      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level1" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\data" />
     </key>
   </component>
@@ -285,7 +273,28 @@
       <option name="project" value="LOCAL" />
       <updated>1674155924264</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Файлы отсортированы">
+      <created>1674157917726</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674157917726</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Файлы отсортированы на втором и первом уровне">
+      <created>1674157983264</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674157983264</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Файлы отсортированы на втором и первом уровне">
+      <created>1674158032940</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674158032940</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,6 +328,8 @@
     <MESSAGE value="недоделанная версия 1 уровня1(с плоским миром и врагами-могилами)" />
     <MESSAGE value="недоделанная версия2 уровня1 с музыкой" />
     <MESSAGE value="Добавлено переключение на 3 уровень из главного файла" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено переключение на 3 уровень из главного файла" />
+    <MESSAGE value="Файлы отсортированы" />
+    <MESSAGE value="Файлы отсортированы на втором и первом уровне" />
+    <option name="LAST_COMMIT_MESSAGE" value="Файлы отсортированы на втором и первом уровне" />
   </component>
 </project>

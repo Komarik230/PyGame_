@@ -4,9 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Добавлены монстры во втором уровне">
+    <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Изменен монстр">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/level2/monstr.png" beforeDir="false" afterPath="$PROJECT_DIR$/level2/monstr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_res.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_res.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game over.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/game over.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_over.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_over.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/coin.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/coin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/level1.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/level1_bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/level1_bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/level1_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1_support.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/level_completed.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/level_completed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/map1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/mogila.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/mogila.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/mus_level1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mus_level1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/scull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/successful_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/successful_end.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1/кирпичи.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/кирпичи.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/box.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/box.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/game over.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/game_over.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/horror.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/horror.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/info.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/level2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/level2.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/level2_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2_support.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/level_completed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/mogila.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/monstr.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/monstr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/scull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/successful_end.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/necropolis.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/documents/necropolis.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ТЗ.docx" beforeDir="false" afterPath="$PROJECT_DIR$/documents/ТЗ.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +90,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/OvsyannikovaOV/PycharmProjects/PyGame_/data",
+    "last_opened_file_path": "C:/Users/OvsyannikovaOV/PycharmProjects/PyGame_/start_window.py",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -67,13 +100,14 @@
       <recent name="C:\Users\varfo\PycharmProjects\Necropolis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\data" />
+      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\documents" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level2" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level1" />
-      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\data" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.start_window">
     <configuration name="firstlevel_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyGame_" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,7 +213,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="start_window" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="PyGame_" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\OvsyannikovaOV\AppData\Local\Programs\Python\Python311\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/start_window.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python.start_window" />
       <item itemvalue="Python.firstlevel_v1" />
       <item itemvalue="Python.gitt2" />
       <item itemvalue="Python.running2" />
@@ -310,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674164355240</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Изменен монстр">
+      <created>1674165076730</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1674165076730</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,6 +411,7 @@
     <MESSAGE value="Файлы отсортированы на втором и первом уровне" />
     <MESSAGE value="запуск об успешном прохождении" />
     <MESSAGE value="Добавлены монстры во втором уровне" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены монстры во втором уровне" />
+    <MESSAGE value="Изменен монстр" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменен монстр" />
   </component>
 </project>

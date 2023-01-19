@@ -24,8 +24,7 @@ class Tile(pygame.sprite.Sprite):
     # Класс плиток
     def __init__(self, pos, size):
         super().__init__()
-        self.image = load_screen_im("кирпичи.png")
-        self.image = pygame.transform.scale(self.image, (60, 60))
+        self.image = load_screen_im("data\\box.png")
         self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect(topleft=pos)
 
@@ -36,7 +35,18 @@ class Tile(pygame.sprite.Sprite):
 class Coin(pygame.sprite.Sprite):
     def __init__(self, pos, size):
         super().__init__()
-        self.image = load_screen_im("coin.png")
+        self.image = load_screen_im("data\\coin.png")
+        self.rect = self.image.get_rect(topleft=pos)
+        self.mask = pygame.mask.from_surface(self.image)
+
+    def update(self, x_shift):
+        self.rect.x += x_shift
+
+
+class Monstr(pygame.sprite.Sprite):
+    def __init__(self, pos, size):
+        super().__init__()
+        self.image = load_screen_im("data\\monstr.png")
         self.rect = self.image.get_rect(topleft=pos)
         self.mask = pygame.mask.from_surface(self.image)
 
@@ -48,7 +58,7 @@ class End(pygame.sprite.Sprite):
     # При соприкосновении с объектом данного класса считается, что игрок прошел уровень
     def __init__(self, pos, size):
         super().__init__()
-        self.image = load_screen_im("mogila.png")
+        self.image = load_screen_im("data\\mogila.png")
         self.rect = self.image.get_rect(topleft=pos)
         self.mask = pygame.mask.from_surface(self.image)
 
@@ -93,6 +103,7 @@ class Level:
         self.tiles = pygame.sprite.Group()
         self.coins = pygame.sprite.Group()
         self.mogilas = pygame.sprite.Group()
+        self.monstrs = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
 
         for row_index, row in enumerate(layout):
@@ -109,6 +120,9 @@ class Level:
                 if cell == 'E':
                     mogila = End((x, y), tile_size)
                     self.mogilas.add(mogila)
+                if cell == 'M':
+                    monstr = Monstr((x, y), tile_size)
+                    self.monstrs.add(monstr)
                 if cell == 'P':
                     player_sprite = Player((x, y), self.display_surface, self.create_jump_particles)
                     self.player.add(player_sprite)
@@ -168,7 +182,7 @@ class Level:
         if player.on_ceiling and player.direction.y > 0.1:
             player.on_ceiling = False
 
-    def collide_with_money(self):
+    def collide_with_money_and_monstr(self):
         player = self.player.sprite
         for coin in self.coins.sprites():
             if pygame.sprite.collide_rect(player, coin):
@@ -176,6 +190,9 @@ class Level:
                 coin.kill()
                 with open('info.txt', 'w', encoding='utf-8') as f:
                     f.write(f'{self.count}')
+        for monstr in self.monstrs.sprites():
+            if pygame.sprite.collide_rect(player, monstr):
+                call(["python", "game_over.py"])
 
     def successful_end(self):
         player = self.player.sprite
@@ -191,6 +208,8 @@ class Level:
         self.coins.draw(self.display_surface)
         self.mogilas.update(self.world_shift)
         self.mogilas.draw(self.display_surface)
+        self.monstrs.update(self.world_shift)
+        self.monstrs.draw(self.display_surface)
         self.scroll_x()
         self.player.update()
         self.horizontal_movement_collision()
@@ -198,7 +217,7 @@ class Level:
         self.vertical_movement_collision()
         self.create_landing_dust()
         self.player.draw(self.display_surface)
-        self.collide_with_money()
+        self.collide_with_money_and_monstr()
         self.successful_end()
 
 
@@ -208,9 +227,9 @@ class ParticleEffect(pygame.sprite.Sprite):
         self.frame_index = 0
         self.animation_speed = 0.5
         if type == 'jump':
-            self.frames = import_folder('../graphics/character/dust_particles/jump')
+            self.frames = import_folder('graphics/character/dust_particles/jump')
         if type == 'land':
-            self.frames = import_folder('../graphics/character/dust_particles/land')
+            self.frames = import_folder('graphics/character/dust_particles/land')
         self.image = self.frames[self.frame_index]
         self.rect = self.image.get_rect(center=pos)
 
@@ -257,7 +276,7 @@ class Player(pygame.sprite.Sprite):
         self.on_right = False
 
     def import_character_assets(self):
-        character_path = '../graphics/character/'
+        character_path = 'graphics/character/'
         self.animations = {'idle': [], 'run': [], 'jump': [], 'fall': []}
 
         for animation in self.animations.keys():
@@ -265,10 +284,12 @@ class Player(pygame.sprite.Sprite):
             self.animations[animation] = import_folder(full_path)
 
     def import_dust_run_particles(self):
-        self.dust_run_particles = import_folder('../graphics/character/dust_particles/run')
+        self.dust_run_particles = import_folder('graphics/character/dust_particles/run')
 
     def animate(self):
         animation = self.animations[self.status]
+
+        # loop over frame index
         self.frame_index += self.animation_speed
         if self.frame_index >= len(animation):
             self.frame_index = 0
@@ -280,6 +301,7 @@ class Player(pygame.sprite.Sprite):
             flipped_image = pygame.transform.flip(image, True, False)
             self.image = flipped_image
 
+        # set the rect
         if self.on_ground and self.on_right:
             self.rect = self.image.get_rect(bottomright=self.rect.bottomright)
         elif self.on_ground and self.on_left:

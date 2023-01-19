@@ -1,6 +1,6 @@
 import pygame, sys, os
-from map import *
-from level2_support import Level
+from map1 import *
+from level1_support import Level
 
 
 def music_play(name):
@@ -15,10 +15,10 @@ def music_play(name):
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
-level = Level(map2, screen)
+level = Level(map1, screen)
 pygame.display.set_caption('necropolis')
-pygame.display.set_icon(pygame.image.load('scull.png'))
-mus = music_play('horror.mp3')
+pygame.display.set_icon(pygame.image.load('data\\scull.png'))
+mus = music_play('data\\mus_level1.mp3')
 
 while True:
     for event in pygame.event.get():
@@ -26,7 +26,7 @@ while True:
             pygame.quit()
             sys.exit()
 
-    background = pygame.image.load("level2.jpg")
+    background = pygame.image.load("data/level1_bg.jpg")
     screen.blit(background, (0, 0))
     level.run()
 

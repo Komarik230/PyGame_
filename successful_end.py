@@ -9,7 +9,7 @@ screen.fill('white')
 clock = pygame.time.Clock()
 
 particles = []
-text_surf = pygame.image.load("level_completed.png")
+text_surf = pygame.image.load("data\\level_completed.png")
 text_rect = text_surf.get_rect(center=(width // 2, height // 2))
 
 

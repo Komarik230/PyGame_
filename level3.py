@@ -9,7 +9,7 @@ screen = pygame.display.set_mode((Width, Height))
 fps = 60
 clock = pygame.time.Clock()
 pygame.display.set_caption('necropolis')
-pygame.display.set_icon(pygame.image.load('data/scull.png'))
+pygame.display.set_icon(pygame.image.load('scull.png'))
 font_path = 'font.ttf'
 font_large = pygame.font.Font(font_path, 48)
 font_small = pygame.font.Font(font_path, 26)
@@ -19,23 +19,27 @@ retry_text = font_small.render('press to restart', True, (255, 255, 255))
 retry_rect = retry_text.get_rect()
 retry_rect.midtop = (Width // 2, Height // 2)
 
-ground_image = pygame.image.load('data/floor.png')
+best_text = font_large.render('best result:', True, (255, 255, 255))
+best_rect = retry_text.get_rect()
+best_rect.midtop = (150, 570)
+
+ground_image = pygame.image.load('floor.png')
 ground_image = pygame.transform.scale(ground_image, (1024, 80))
 GROUND_H = ground_image.get_height()
 
-player_image = pygame.image.load('data/skeleton.png.')
+player_image = pygame.image.load('skeleton.png.')
 player_image = pygame.transform.scale(player_image, (100, 200))
 
-bg_image = pygame.image.load('data/level3_bg.jpg')
+bg_image = pygame.image.load('level3_bg.jpg')
 gr_speed = 3
 
-enemy_image = pygame.image.load('data/tomb.png')
+enemy_image = pygame.image.load('tomb.png')
 enemy_image = pygame.transform.scale(enemy_image, (100, 100))
 
-enemy_dead_image = pygame.image.load('data/dead_tomb.png')
+enemy_dead_image = pygame.image.load('dead_tomb.png')
 enemy_dead_image = pygame.transform.scale(enemy_dead_image, (100, 100))
 
-pygame.mixer.music.load('data/mus_level3.mp3')
+pygame.mixer.music.load('mus_level3.mp3')
 pygame.mixer.music.play(-1)
 
 class Sprites:
@@ -148,6 +152,8 @@ class Tomb(Sprites):
 
 
 def main():
+    with open("best_res.txt", 'rb') as f:
+        best_result = int(f.read())
     player = Player()
     score = 0
     enemies = []
@@ -174,9 +180,19 @@ def main():
         score_text = font_large.render(str(score), True, (255, 255, 255))
         score_rect = score_text.get_rect()
 
+        best_res_text = font_large.render(str(best_result), True, (255, 255, 255))
+        best_res_rect = best_res_text.get_rect()
+        best_res_rect.midtop = (410, 570)
         if player.is_out: # герой умер
             score_rect.midbottom = (Width // 2, Height // 2)
             screen.blit(retry_text, retry_rect)
+            if score > best_result:
+                best_result = score
+                with open("best_res.txt", 'w') as f:
+                    f.write(str(score))
+            screen.blit(best_res_text, best_res_rect)
+            screen.blit(best_text, best_rect)
+
         else: # герой все еще жив
             player.update()
             player.draw(screen)

@@ -44,3 +44,13 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
+class GameOver():
+    def __int__(self):
+        pygame.init()
+        self.size = width, height = [1024, 640]
+        self.screen = pygame.display.set_mode(size)
+        clock = pygame.time.Clock()
+
+        particles = []
+        text_surf = pygame.image.load("data\\game over.png")
+        text_rect = text_surf.get_rect(center=(width // 2, height // 2))

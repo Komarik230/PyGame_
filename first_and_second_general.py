@@ -1,7 +1,6 @@
 import pygame, os, sys
-from subprocess import call
-from map import tile_size, WIDTH
 from os import walk
+from subprocess import call
 
 
 def load_screen_im(name, colorkey=None):
@@ -20,20 +19,8 @@ def load_screen_im(name, colorkey=None):
     return image
 
 
-class Tile(pygame.sprite.Sprite):
-    # Класс плиток
-    def __init__(self, pos, size):
-        super().__init__()
-        self.image = load_screen_im("data\\кирпичи.png")
-        self.image = pygame.transform.scale(self.image, (60, 60))
-        self.mask = pygame.mask.from_surface(self.image)
-        self.rect = self.image.get_rect(topleft=pos)
-
-    def update(self, x_shift):
-        self.rect.x += x_shift
-
-
 class Coin(pygame.sprite.Sprite):
+    # Класс монет
     def __init__(self, pos, size):
         super().__init__()
         self.image = load_screen_im("data\\coin.png")
@@ -45,7 +32,7 @@ class Coin(pygame.sprite.Sprite):
 
 
 class End(pygame.sprite.Sprite):
-    # При соприкосновении с объектом данного класса считается, что игрок прошел уровень
+    # При соприкосновении с объектом данного класса считается, что игрок прошел уровень(могила)
     def __init__(self, pos, size):
         super().__init__()
         self.image = load_screen_im("data\\mogila.png")
@@ -56,154 +43,11 @@ class End(pygame.sprite.Sprite):
         self.rect.x += x_shift
 
 
-class Level:
-    def __init__(self, level_data, surface):
-        self.display_surface = surface
-        self.setup_level(level_data)
-        self.world_shift = 0
-        self.current_x = 0
-        self.dust_sprite = pygame.sprite.GroupSingle()
-        self.player_on_ground = False
-        self.count = 0
-
-    def create_jump_particles(self, pos):
-        if self.player.sprite.facing_right:
-            pos -= pygame.math.Vector2(10, 5)
-        else:
-            pos += pygame.math.Vector2(10, -5)
-        jump_particle_sprite = ParticleEffect(pos, 'jump')
-        self.dust_sprite.add(jump_particle_sprite)
-
-    def get_player_on_ground(self):
-        if self.player.sprite.on_ground:
-            self.player_on_ground = True
-        else:
-            self.player_on_ground = False
-
-    def create_landing_dust(self):
-        if not self.player_on_ground and self.player.sprite.on_ground and not self.dust_sprite.sprites():
-            if self.player.sprite.facing_right:
-                offset = pygame.math.Vector2(10, 15)
-            else:
-                offset = pygame.math.Vector2(-10, 15)
-            fall_dust_particle = ParticleEffect(self.player.sprite.rect.midbottom - offset, 'land')
-            self.dust_sprite.add(fall_dust_particle)
-
-    def setup_level(self, layout):
-        self.tiles = pygame.sprite.Group()
-        self.coins = pygame.sprite.Group()
-        self.mogilas = pygame.sprite.Group()
-        self.player = pygame.sprite.GroupSingle()
-
-        for row_index, row in enumerate(layout):
-            for col_index, cell in enumerate(row):
-                x = col_index * tile_size
-                y = row_index * tile_size
-
-                if cell == 'X':
-                    tile = Tile((x, y), tile_size)
-                    self.tiles.add(tile)
-                if cell == 'C':
-                    coin = Coin((x, y), tile_size)
-                    self.coins.add(coin)
-                if cell == 'E':
-                    mogila = End((x, y), tile_size)
-                    self.mogilas.add(mogila)
-                if cell == 'P':
-                    player_sprite = Player((x, y), self.display_surface, self.create_jump_particles)
-                    self.player.add(player_sprite)
-
-    def scroll_x(self):
-        player = self.player.sprite
-        player_x = player.rect.centerx
-        direction_x = player.direction.x
-
-        if player_x < WIDTH / 4 and direction_x < 0:
-            self.world_shift = 8
-            player.speed = 0
-        elif player_x > WIDTH - (WIDTH / 4) and direction_x > 0:
-            self.world_shift = -8
-            player.speed = 0
-        else:
-            self.world_shift = 0
-            player.speed = 8
-
-    def horizontal_movement_collision(self):
-        player = self.player.sprite
-        player.rect.x += player.direction.x * player.speed
-
-        for sprite in self.tiles.sprites():
-            if sprite.rect.colliderect(player.rect):
-                if player.direction.x < 0:
-                    player.rect.left = sprite.rect.right
-                    player.on_left = True
-                    self.current_x = player.rect.left
-                elif player.direction.x > 0:
-                    player.rect.right = sprite.rect.left
-                    player.on_right = True
-                    self.current_x = player.rect.right
-
-        if player.on_left and (player.rect.left < self.current_x or player.direction.x >= 0):
-            player.on_left = False
-        if player.on_right and (player.rect.right > self.current_x or player.direction.x <= 0):
-            player.on_right = False
-
-    def vertical_movement_collision(self):
-        player = self.player.sprite
-        player.apply_gravity()
-
-        for sprite in self.tiles.sprites():
-            if sprite.rect.colliderect(player.rect):
-                if player.direction.y > 0:
-                    player.rect.bottom = sprite.rect.top
-                    player.direction.y = 0
-                    player.on_ground = True
-                elif player.direction.y < 0:
-                    player.rect.top = sprite.rect.bottom
-                    player.direction.y = 0
-                    player.on_ceiling = True
-
-        if player.on_ground and player.direction.y < 0 or player.direction.y > 1:
-            player.on_ground = False
-        if player.on_ceiling and player.direction.y > 0.1:
-            player.on_ceiling = False
-
-    def collide_with_money(self):
-        player = self.player.sprite
-        for coin in self.coins.sprites():
-            if pygame.sprite.collide_rect(player, coin):
-                self.count += 1  # монетки собираются
-                coin.kill()
-                with open('info.txt', 'w', encoding='utf-8') as f:
-                    f.write(f'{self.count}')
-
-    def successful_end(self):
-        player = self.player.sprite
-        if pygame.sprite.spritecollideany(player, self.mogilas):
-            call(["python", "successful_end.py"])
-            sys.exit()
-
-    def run(self):
-        self.dust_sprite.update(self.world_shift)
-        self.dust_sprite.draw(self.display_surface)
-        self.tiles.update(self.world_shift)
-        self.tiles.draw(self.display_surface)
-        self.coins.update(self.world_shift)
-        self.coins.draw(self.display_surface)
-        self.mogilas.update(self.world_shift)
-        self.mogilas.draw(self.display_surface)
-        self.scroll_x()
-        self.player.update()
-        self.horizontal_movement_collision()
-        self.get_player_on_ground()
-        self.vertical_movement_collision()
-        self.create_landing_dust()
-        self.player.draw(self.display_surface)
-        self.collide_with_money()
-        self.successful_end()
-
-
 class ParticleEffect(pygame.sprite.Sprite):
+    """"Класс, отвечающий за появление пыль
+    def animate() метод анимации
+    def update() метод обновления""""
+
     def __init__(self, pos, type):
         super().__init__()
         self.frame_index = 0
@@ -228,11 +72,22 @@ class ParticleEffect(pygame.sprite.Sprite):
 
 
 class Player(pygame.sprite.Sprite):
+    """Основной класс по работе с главным героем
+    import_character_assets() создание словаря с анимациями по действию
+    import_dust_run_particles() импорт пыли
+    animate(), run_dust_animation() работа с анимациями
+    get_input() движение героя при нажатии на клавиши на клавиатуре
+    get_status() получение статуса игра с помощью координат x, y
+    apply_gravity() гравитация
+    game_ov() появление заставки при выходе игрока за пределы экрана
+    jump() прыжки
+    update() обновление"""
+
     def __init__(self, pos, surface, create_jump_particles):
         super().__init__()
         self.import_character_assets()
         self.frame_index = 0
-        self.animation_speed = 0.15
+        self.animation_speed = 0.15  # скорость проигрывания анимации
         self.image = self.animations['idle'][self.frame_index]
         self.rect = self.image.get_rect(topleft=pos)
 
@@ -270,6 +125,8 @@ class Player(pygame.sprite.Sprite):
 
     def animate(self):
         animation = self.animations[self.status]
+
+        # зацикливание кадров с помощью индекса
         self.frame_index += self.animation_speed
         if self.frame_index >= len(animation):
             self.frame_index = 0
@@ -342,6 +199,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.y += self.direction.y
 
     def game_ov(self):
+        self.count = 0
         if self.rect[1] > 640:
             call(["python", "game_over.py"])
             sys.exit()

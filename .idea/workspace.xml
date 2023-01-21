@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d441d1a9-d5d1-48a4-9a21-0bba734ebe53" name="Changes" comment="Добавлены все переключения">
+      <change afterPath="$PROJECT_DIR$/data/first1_level_screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/second2_level_screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/third3_level_screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_and_second_general.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2023_16_42__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_res.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_res.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_over.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_over.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1.py" beforeDir="false" afterPath="$PROJECT_DIR$/level1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1_support.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2.py" beforeDir="false" afterPath="$PROJECT_DIR$/level2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2/game_over.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level2_support.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,29 +67,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/OvsyannikovaOV/PycharmProjects/PyGame_/start_window.py",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/OvsyannikovaOV/PycharmProjects/PyGame_/start_window.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\data" />
       <recent name="C:\Users\varfo\PycharmProjects\Necropolis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\data" />
+      <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\documents" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level2" />
       <recent name="C:\Users\OvsyannikovaOV\PycharmProjects\PyGame_\level1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.start_window">
+  <component name="RunManager">
     <configuration name="firstlevel_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyGame_" />
       <option name="INTERPRETER_OPTIONS" value="" />

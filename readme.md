@@ -10,7 +10,7 @@
 
 ### Распределение работы ### 
 Ульяна: реализация классов в файлах first_and_second_general.py , level1, level2, map; переключение на уровни в start_window.py(select_level1(), select_level2(), select_level3())
-
+Катя: реализация классов в файлах level3, start_window, функций в файлах game_over, successful_end, запись и изменение данных в info.txt, best_res.txt
 
 ### Описание ### 
 

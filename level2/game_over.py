@@ -8,7 +8,7 @@ screen = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
 
 particles = []
-text_surf = pygame.image.load("game over.png")
+text_surf = pygame.image.load("data/game over.png")
 text_rect = text_surf.get_rect(center=(width // 2, height // 2))
 
 

@@ -5,7 +5,7 @@ from subprocess import call
 
 
 class App:
-    def __init__(self):
+    def __init__(self): # окно приложения
         pygame.init()
         self.width, self.height = 1024, 640
         self.clock = pygame.time.Clock()
@@ -19,7 +19,7 @@ class App:
         pygame.quit()
         sys.exit()
 
-    def load_image(self, name, colorkey=None):
+    def load_image(self, name, colorkey=None):  # загрузка изображений
         fullname = os.path.join('data', name)
         # если файл не существует, то выходим
         if not os.path.isfile(fullname):
@@ -35,7 +35,7 @@ class App:
             image = image.convert_alpha()
         return image
 
-    def Coins(self):
+    def Coins(self):  # показ монет в главном меню
         font_path = 'font.ttf'
         font_small = pygame.font.Font(font_path, 26)
         with open('info.txt', 'rb') as f:
@@ -45,7 +45,7 @@ class App:
         coins_rect.midtop = (970, 15)
         self.screen.blit(coins_text, coins_rect)
 
-    def start_screen(self):
+    def start_screen(self):  # заставка
         fon = pygame.transform.scale(self.load_image('splash.jpg'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
         while True:
@@ -59,7 +59,7 @@ class App:
             pygame.display.flip()
             self.clock.tick(self.fps)
 
-    def select_level1(self):
+    def select_level1(self):  # загрузка первого уровня в главном меню
         fon = pygame.transform.scale(self.load_image('select_level1.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
         app.Coins()
@@ -74,7 +74,7 @@ class App:
                     call(["python", "level1.py"])
             pygame.display.flip()
 
-    def select_level2(self):
+    def select_level2(self):  # загрузка второго уровня в главном меню
         fon = pygame.transform.scale(self.load_image('select_level2.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
         app.Coins()
@@ -92,7 +92,7 @@ class App:
                     call(["python", "level2.py"])
             pygame.display.flip()
 
-    def select_level3(self):
+    def select_level3(self):  # загрузка третьего уровня в главном меню
         fon = pygame.transform.scale(self.load_image('select_level3.png'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
         app.Coins()

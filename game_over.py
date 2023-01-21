@@ -11,7 +11,7 @@ particles = []
 text_surf = pygame.image.load("data\\game over.png")
 text_rect = text_surf.get_rect(center=(width // 2, height // 2))
 
-
+#  заставка
 def update():
     particle = {
         "pos": [

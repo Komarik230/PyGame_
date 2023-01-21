@@ -43,8 +43,7 @@ pygame.mixer.music.load('data/mus_level3.mp3')
 pygame.mixer.music.play(-1)
 
 
-
-class Sprites:
+class Sprites:  # класс для спрайтов
     def __init__(self, image):
         self.image = image
         self.rect = self.image.get_rect()
@@ -56,13 +55,13 @@ class Sprites:
         self.is_grounded = False  # находимся на земле или нет
         self.gr_x = 0
         self.is_out = False  # упал за карту или нет
-        self.is_dead = False
+        self.is_dead = False   # жив или нет
         self.lenght = 5
 
-    def handle_input(self): # ручной ввод/ввод пользователя
+    def handle_input(self): # ручной ввод пользователя
         pass
 
-    def kill(self, dead_image):
+    def kill(self, dead_image):  # при смерти спрайта
         self.image = dead_image
         self.is_dead = True
         self.x_speed = -self.x_speed
@@ -73,10 +72,10 @@ class Sprites:
         self.y_speed += self.gravity
         self.rect.y += self.y_speed
 
-        if self.is_dead:
+        if self.is_dead:   # если умер
             if self.rect.top > Height - GROUND_H:
                 self.is_out = True
-        else:
+        else:   # если живой
             self.handle_input()
 
             if self.rect.bottom > Height - GROUND_H:
@@ -84,11 +83,11 @@ class Sprites:
                 self.y_speed = 0
                 self.rect.bottom = Height - GROUND_H
 
-    def draw(self, surface):
+    def draw(self, surface):   # отрисовка спрайтов
         surface.blit(self.image, self.rect)
 
 
-class Player(Sprites):
+class Player(Sprites):   # наследуемый класс героя
     def __init__(self):
         super().__init__(player_image)
         self.respawn()
@@ -97,13 +96,13 @@ class Player(Sprites):
         self.x_speed = 0
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_a]:
+        if keys[pygame.K_a]:   # движение влево
             if self.rect.x <= Width // 2:
                 self.gr_x += gr_speed
             if self.rect.x > 100:
                 self.x_speed = -self.speed
 
-        elif keys[pygame.K_d]:
+        elif keys[pygame.K_d]:   # движение вправо
             if self.rect.x >= Width // 2:
                 self.gr_x -= gr_speed
 
@@ -113,19 +112,19 @@ class Player(Sprites):
         if self.gr_x == -1024:
             self.gr_x = 0
 
-        if (keys[pygame.K_SPACE] or keys[pygame.K_w]) and self.is_grounded:
+        if (keys[pygame.K_SPACE] or keys[pygame.K_w]) and self.is_grounded:  # прыжок
             self.is_grounded = False
             self.jump()
 
-    def jump(self):
+    def jump(self):   # прыжок
         self.y_speed = self.jump_speed
 
-    def respawn(self):
+    def respawn(self):   # появление героя при запуске и после смерти
         self.is_out = False
         self.is_dead = False
         self.rect.midbottom = (Width // 2, Height - GROUND_H)
 
-    def draw_main(self):
+    def draw_main(self):   # отрисовка земли
         screen.blit(bg_image, (0, 0))
         screen.blit(ground_image, (self.gr_x, 640 - GROUND_H))
         screen.blit(ground_image, (self.gr_x - 1024, 640 - GROUND_H))
@@ -133,22 +132,23 @@ class Player(Sprites):
             screen.blit(ground_image, (self.gr_x + i * 1024, Height - GROUND_H))
 
 
-class Tomb(Sprites):
+class Tomb(Sprites):   # класс могил(врагов)
     def __init__(self):
         super().__init__(enemy_image)
         self.spawn()
 
-    def spawn(self):
+    def spawn(self):   # появление
         direction = random.randint(0, 1)
-        if direction == 0:
+        if direction == 0:  # слева
             self.x_speed = self.speed
             self.rect.bottomright = (0, 0)
-        else:
+        else:  # справа
             self.x_speed = -self.speed
             self.rect.bottomleft = (Width, 0)
 
     def update(self):
         super().update()
+        # проверка выхода за пределы карты
         if self.x_speed > 0 and self.rect.left > Width or self.x_speed < 0 and self.rect.right < 0:
             self.is_out = True
 
@@ -157,22 +157,24 @@ def main():
     player = Player()
     score = 0
     enemies = []
-    delay = 2000 # задержка спавна мобов
-    spawn_delay = delay # как часто спавнятся мобы(интервал)
-    increase = 1.01
+    delay = 2000  # задержка спавна мобов
+    spawn_delay = delay  # как часто спавнятся мобы(интервал)
+    increase = 1.01    # увеличение спавна
     last_spawn_time = pygame.time.get_ticks()
     running = True
-    while running:
+    while running:   # открытие файла для записи лучшего результата
         with open("best_res.txt", 'rb') as f:
             best_result = int(f.read())
 
         player.draw_main()
 
         for e in pygame.event.get():
-            if e.type == pygame.QUIT:
+            if e.type == pygame.QUIT:   # если закрытие окна, то программа и музыка останавливаются
                 running = False
                 pygame.mixer.music.stop()
             elif e.type == pygame.KEYDOWN:
+                '''если нажатие, то происходит обновление счета, задержка спавна, время последнего спавна,
+                появление героя и очистка врагов из списка, чтобы не засорять память и программа работала быстро'''
                 if player.is_out:
                     score = 0
                     spawn_delay = delay
@@ -189,17 +191,17 @@ def main():
 
         if player.is_out: # герой умер
             score_rect.midbottom = (Width // 2, Height // 2)
-            screen.blit(retry_text, retry_rect)
-            screen.blit(best_text, best_rect)
+            screen.blit(retry_text, retry_rect)  # отрисовка текста повторить попытку
+            screen.blit(best_text, best_rect)   # отрисовка лучшего результата (текст)
             if score > best_result:
                 best_result = score
                 with open("best_res.txt", 'w') as f:
+                    # изменение лучшего результата в случае, если он больше предыдущего
                     f.write(str(best_result))
-            screen.blit(best_res_text, best_res_rect)
-        else: # герой все еще жив
+            screen.blit(best_res_text, best_res_rect)   # отрисовка лучшего результата (очками)
+        else:  # герой все еще жив
             player.update()
             player.draw(screen)
-
             now = pygame.time.get_ticks()
             time_passed = now - last_spawn_time
             if time_passed > spawn_delay:
@@ -207,22 +209,26 @@ def main():
                 enemies.append(Tomb())
             for enemy in list(enemies):
                 if enemy.is_out:
+                    # при смерти могилы (выходе за пределы карты) она удаляется, чтобы программа не тормозила
                     enemies.remove(enemy)
                 else:
                     enemy.update()
                     enemy.draw(screen)
-
+                # проверка жив ли герой и могила, и их соприкосновения
                 if not player.is_dead and not enemy.is_dead and player.rect.colliderect(enemy.rect):
+                    # если низ героя касается верха могилы - она умирает
                     if player.rect.bottom - player.y_speed < enemy.rect.top:
                         enemy.kill(enemy_dead_image)
-                        player.jump()
+                        player.jump()  # герой отпрыгивает
                         score += 1
+                        """задержка спавна уменьшается и могилы начинают появлятся быстрее, взависимости 
+                        от набранных очков, для увеличения сложности"""
                         spawn_delay = delay / (increase ** score)
 
-                    else:
+                    else:  # герой умирает
                         player.kill(player_image)
             score_rect.midtop = (Width // 2, 5)
-        screen.blit(score_text, score_rect)
+        screen.blit(score_text, score_rect)  # отрисовка очков
         pygame.display.flip()
 
 

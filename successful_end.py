@@ -12,7 +12,7 @@ particles = []
 text_surf = pygame.image.load("data\\level_completed.png")
 text_rect = text_surf.get_rect(center=(width // 2, height // 2))
 
-
+# появление частиц, спускающихся вниз
 def update():
     particle = {
         "pos": [
@@ -38,7 +38,7 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
-        if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.type == pygame.MOUSEBUTTONDOWN:  # закрытие заставки при нажатии мышки
             sys.exit()
     update()
     render()

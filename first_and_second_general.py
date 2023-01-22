@@ -46,7 +46,7 @@ class End(pygame.sprite.Sprite):
 class ParticleEffect(pygame.sprite.Sprite):
     """"Класс, отвечающий за появление пыль
     def animate() метод анимации
-    def update() метод обновления""""
+    def update() метод обновления"""
 
     def __init__(self, pos, type):
         super().__init__()
